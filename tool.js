@@ -54,10 +54,10 @@ tool.toolbar.appendChild(tool.button_polygonMaker);
 
 tool.map = L.map('map').setView([43.00059846846789,-75.97487926483154], 15);
 tool.mainLayer = new L.tileLayer(
-  'http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png',
+  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
   {
     transparent : true,
-    attribution : '<a href="http://www.thunderforest.com">Thunderforest.com</a>'
+    attribution : '<a href="openstreetmap.org">OSM</a>'
   }
 );
 tool.map.addLayer(tool.mainLayer);

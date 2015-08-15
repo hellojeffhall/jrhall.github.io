@@ -25,6 +25,8 @@
         var map = L.map('map').setView(fatalities[2],11);
         var layer = new L.tileLayer(
           'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+        );
+
         map.addLayer(layer);
         
 /*        var nexrad = L.tileLayer.wms(
