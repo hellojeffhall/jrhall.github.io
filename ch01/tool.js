@@ -63,7 +63,9 @@ tool.mainLayer = new L.tileLayer(
 tool.map.addLayer(tool.mainLayer);
 
 tool.makePoint = function(latlng) {
-  L.marker(latlng,{title: latlng.lat + ', ' + latlng.lng}).addTo(tool.map); 
+  var temp = 
+    L.marker(latlng,{title: latlng.lat + ', ' + latlng.lng}).addTo(tool.map);
+  temp.bindPopup(tool.generatePopoverHTML(temp)); 
 };
 
 tool.makeDot = function (latlng) {
@@ -137,3 +139,17 @@ tool.map.addEventListener('click', function (ev ) {
   };
   dictionary_of_actions[tool.state.mode](ev.latlng);   
 });
+
+tool.kill = function(layer) {
+  tool.map.removeLayer(layer);
+};
+
+tool.generatePopoverHTML = function(layer) {
+  var a = document.createElement('a');
+  a.innerHTML = 'Delete';
+  a.addEventListener('click', function() {
+    tool.kill(layer); 
+  });
+  return a;
+};
+
