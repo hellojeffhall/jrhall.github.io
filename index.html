@@ -1,57 +1,53 @@
 <!doctype html>
 <html>
+
 <head>
-  <title></title>
+  <title> Jeff Hall - Github.io</title>
+  <style>
+    html, body {
+      height : 100% ; 
+      width  : 100% ; 
+      margin : 0 ;
+      padding : 0 ;
+    }
+    .app {
+      height : 100% ; 
+      body   : 100% ; 
+      background : repeating-linear-gradient(45deg, #006 , #006 5%, #58a 0,  #58a 10%);
+      background-size : 100% 100% ;
+      display : flex ;
+      flex-direction : row ;
+      justify-content : center ;
+      align-conent : center;
+      align-items : center ;
+      overflow : hidden ;
+    }
+    .container {
+      margin-bottom : 5vh ;
+      padding : .3em .8em ;
 
-    
-    <link rel="stylesheet"  href="./leaflet-0.7.3.css" />
-    <link rel="stylesheet"  href="./tool.css"/>
-    
+      background : linear-gradient(rgba(100%,100%,100%,.8), rgba(100%,100%,100%,.4) );
+      background-color : yellow ;
+      line-height : 150%; 
+      box-shadow : 0 .05em .25em gray ; 
+      display : flex ; 
+      flex-direction : row ;
+      justify-content : center ;
+      align-items : center ;
+      font-family : helvetica ;
+      font-weight : 100 ;
+      font-size   : 3em ; 
+      
+    }
+  </style>
 </head>
+
 <body>
-    <div id="map" style="width: 800; height: 800px"></div>
-    <script src="./leaflet-0.7.3.js"></script>
-    <script src="./fatal.js"></script>
-
-    <script>
-        
-        
-        var fatalities = data_fatal.features.map( function( temp_feature ) {
-          var coords = temp_feature.geometry.coordinates;
-          return [coords[1], coords[0]];
-        });
-        
-
-         var map = L.map('map').setView([40.7134353637943, -73.97712707519531],11);
-
-        var layer = new L.tileLayer(
-          'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-        ).addTo(map);
-
-        fatalities.forEach (function (temp_coords) {
-          var coords_text = JSON.stringify(temp_coords);
-          var bigCircle = L.circle(
-            temp_coords, 
-            100,
-            {
-              title     : coords_text, 
-              color     : 'grey', 
-              weight    : 1, 
-              fillColor : 'blue' 
-            }
-          ).addTo(map);
-
-          L.circle(
-            temp_coords, 
-            3,
-            {
-              title: coords_text, 
-              color:'blue', 
-              fillColor:'blue',
-            }
-          ).addTo(map);
-        });
-        
-    </script>
+  <div class='app'>
+    <div class='container'>
+      Coming soon!
+    </div>
+  </div>  
 </body>
+
 </html>
